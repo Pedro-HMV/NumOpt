@@ -81,7 +81,7 @@ def find_optimum_type(x_set,y_set):
     for point in find_local_optima(x_set,y_set):
         if fxx(point[0]) > 0:
             minima.append(point)
-        elif fxx(point[0] < 0):
+        elif fxx(point[0]) < 0:
             maxima.append(point)
     return {
         'maxima': maxima,
@@ -93,17 +93,23 @@ def test_objective(point):
     return objective_function.evalf(subs={sp_x: point[0],sp_y: point[1]})
 
 def find_global_optima(x_set,y_set):
-    maximum = {}
-    minimum = {}
+    maximum = {
+        'point': (0, 0),
+        'value': -9999999
+    }
+    minimum = {
+        'point': (0, 0),
+        'value': 9999999
+    }
     optima_list = find_optimum_type(x_set,y_set)
     for point in optima_list['maxima']:
         point_value = test_objective(point)
-        if maximum['value'] is None or point_value > maximum['value']:
+        if point_value > maximum['value']:
             maximum['point'] = point
             maximum['value'] = point_value
     for point in optima_list['minima']:
         point_value = test_objective(point)
-        if minimum['value'] is None or point_value < minimum['value']:
+        if point_value < minimum['value']:
             minimum['point'] = point
             minimum['value'] = point_value
     return {
