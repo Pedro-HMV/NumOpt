@@ -237,12 +237,12 @@ class Problem:
             Dictionary that holds the maximum point with the greatest value,
                                   the minimum point with the smallest value
                                   and their respective values:
-                                                                {
-                                                                    'maximum': {
-                                                                        'point': (x,y),
-                                                                        'value': self.test_objective((x,y))
-                                                                    }
-                                                                }
+                                    {
+                                        'maximum': {
+                                            'point': (x,y),
+                                            'value': self.test_objective((x,y))
+                                        }
+                                    }
         '''
 
         maximum = {
