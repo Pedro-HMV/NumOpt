@@ -82,7 +82,7 @@ class Problem:
 
         Returns
         -------
-        critical_points (list[tuple[float,float]]):
+        critical_points : list[tuple[float,float]]
             List of critical points represented by tuples of floats
         '''
 
@@ -100,7 +100,7 @@ class Problem:
 
         Returns
         -------
-        derivative (float):
+        derivative : float
             Value of the derivative
         '''
 
@@ -121,7 +121,7 @@ class Problem:
 
         Returns
         -------
-        determinant (float):
+        determinant : float
             Value of the determinant
         '''
 
@@ -140,7 +140,7 @@ class Problem:
 
         Returns
         -------
-        hessian_list (list[dict[tuple[float,float],float]]):
+        hessian_list : list[dict[tuple[float,float],float]]
             List of points with their determinants
         '''
 
@@ -164,7 +164,7 @@ class Problem:
 
         Returns
         -------
-        local_optima (list[tuple[float,float]]):
+        local_optima : list[tuple[float,float]]
             List of points for which det H is positive
         '''
 
@@ -236,7 +236,13 @@ class Problem:
         global_optima : dict[str,dict[(str,tuple[float,float]),(str,float)]]
             Dictionary that holds the maximum point with the greatest value,
                                   the minimum point with the smallest value
-                                  and their respective values
+                                  and their respective values:
+                                                                {
+                                                                    'maximum': {
+                                                                        'point': (x,y),
+                                                                        'value': self.test_objective((x,y))
+                                                                    }
+                                                                }
         '''
 
         maximum = {
