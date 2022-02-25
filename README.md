@@ -1,3 +1,128 @@
+﻿# Função Objetivo
+### $$f_{(x,y)} = cos[3π(x+y)]cos[3π(x-y)]-x²-y²+2(x-y)+2$$
+## Simplificando a função objetivo
+$f_{(x,y)} = cos²(3πx) \cdot cos²(3πy) - sen²(3πx) \cdot sen²(3πy) - x² - y² + 2(x - y) + 2$
+
+$f(x,y) = cos²(3πx) \cdot cos²(3πy) - sen²(3πx) \cdot sen²(3πy) - x² - y² + 2x - 2y + 2$
+## Vetor gradiente
+#### O vetor gradiente da função é calculado a partir das derivadas de primeira ordem e nos dá a direção de crescimento da função:
+### $$\nabla f_{(x,y)} = (f_x, f_y)$$
+#### Calculando as derivadas de primeira ordem:
+
+ - ### $f_x$
+
+$f_x = -6πcos(3πx)sen(3πx)cos²(3πy) - 6πcos(3πx)sen(3πx)sen²(3πy) - 2x - 0 + 2 - 0 + 0$
+$f_x = -6πcos(3πx)sen(3πx)cos²(3πy) - 6πcos(3πx)sen(3πx)sen²(3πy) - 2x + 2$
+##### Isolando $-6πcos(3πx)sen(3πx)$ :
+$f_x = -6πcos(3πx)sen(3πx) \cdot (cos²(3πy) + sen²(3πy)) - 2x + 2$
+##### Sabendo que $cos²(a) \cdot sen²(a) = 1$ :
+$f_x = -6πcos(3πx)sen(3πx) - 2x + 2$
+##### Sabendo que $sen(2a) = 2 \cdot sen(a) \cdot cos(a)$ :
+### $f_x = -3πsen(6πx) - 2x + 2$
+<hr></hr>
+ 
+ - ### $f_y$
+
+$f_y = -cos²(3πx)6πcos(3πy)sen(3πy) - sen²(3πx)6πcos(3πy)sen(3πy) - 0 - 2y + 0 - 2 + 0$
+$f_y = -6πcos(3πy)sen(3πy)cos²(3πx) - 6πcos(3πy)sen(3πy)sen²(3πx) - 2y - 2$
+##### Isolando novamente $-6πcos(3πx)sen(3πx)$ :
+$f_y = -6πcos(3πy)sen(3πy) \cdot (cos²(3πx) + sen²(3πy)) - 2y - 2$
+##### Novamente, sendo $cos²(a) \cdot sen²(a) = 1$ :
+$f_y = -6πcos(3πy)sen(3πy) - 2y - 2$
+##### Novamente, sendo $sen(2a) = 2 \cdot sen(a) \cdot cos(a)$ :
+### $f_y = -3πsen(6πy) - 2y - 2$
+<hr></hr>
+
+#### Chegamos ao vetor gradiente:
+### $$\nabla f_{(x , y)} = ([-3πsen(6πx) - 2x + 2] , [-3πsen(6πy) - 2y - 2])$$
+## Pontos críticos
+#### Considerando $\nabla f_{(x , y)} = 0$, temos o sistema:
+ $$\left\{\begin{split}& -3πsen(6πx) - 2x + 2 = 0\\
+ & -3πsen(6πy) - 2y - 2 = 0\end{split}\right.$$
+
+
+### Resolvendo a primeira equação:
+$-3πsen(6πx) - 2x + 2 = 0$
+$2x - 2 = -3πsen(6πx)$
+$$\frac{(2x - 2)}{-3π} = sen(6πx)$$
+#### Fazendo uma análise dos gráficos das funções presentes em cada termo da equação, temos:
+#### Para $\frac{(2x - 2)}{-3π}$:
+![Gráfico 1](https://drive.google.com/file/d/1Jn1pt2NboBprDZ2JzJ7TwXshSsaVSi-t/view?usp=sharing)
+#### Para $sen(6πx)$:
+![Gráfico 2](https://drive.google.com/file/d/1qEzGzXPYbLQORWdys_GjfO0Z_AwOuFDK/view?usp=sharing)
+#### Pelas interseções dos gráficos, temos os valores de $x$ que satisfazem a equação $\frac{(2x - 2)}{-3π} = sen(6πx)$:
+![Gráfico 3](https://drive.google.com/file/d/1AHpheVt2nMIny_Y4WiVQoE8DZ5F8uhLe/view?usp=sharing)
+
+$$
+x = \left\{\begin{split}
+-&3.595,-3.57,-3.273, -3.226, -2.9473, -2.8847, -2.6202, -2.5452, -2.2923, -2.2064, \\-&1.9639, -1.868, -1.635, -1.53, -1.306, -1.192, -0.977, -0.855, -0.648, -0.517, -0.318,
+\\ -&0.18, 0.11, 0.157, 0.341, 0.494, 0.67, 0.831, 1, 1.169, 1.33, 1.506, 1.659, 1.843, 1.989, 2.18,
+\\& 2.318, 2.517, 2.648, 2.855, 2.977, 3.192, 3.306, 3.53, 3.635, 3.868, 3.964, 4.206, 4.292, 4.545,
+\\& 4.62, 4.885, 4.947, 5.226, 5.273, 5.57, 5.595
+\end{split}\right\}
+$$
+  
+### Resolvendo a  segunda equação:
+$-3πsen(6πy) - 2y - 2 = 0$
+$2y + 2 = -3πsen(6πy)$
+$$\frac{(2y + 2)}{-3π} = sen(6πy)$$
+
+#### Fazendo análise gráfica semelhante à anterior:
+#### Para $\frac{(2y + 2)}{-3π}$:
+Gráfico 4
+#### Para $sen(6πy)$:
+Gráfico 2
+#### Pelas interseções dos gráficos, temos os valores de $y$ que satisfazem a equação $\frac{(2y + 2)}{-3π} = sen(6πy)$:
+Gráfico 5
+
+$$
+y = \left\{\begin{split}
+-&5.595, -5.57, -5.273, -5.226, -4.947, -4.885, -4.62, -4.545, -4.292, -4.206, -3.964,
+\\ -&3.868, -3.635, -3.53, -3.306, -3.192, -2.977, -2.855, -2.648, -2.517, -2.318, -2.18,
+\\ -&1.989, -1.843, -1.659, -1.506, -1.33, -1.169, -1, -0.831, -0.67, -0.494, -0.341,
+\\  -&0.157-0.011, 0.18, 0.318, 0.517, 0.648, 0.855, 0.977, 1.192, 1.306, 1.53, 1.635, 1.868, 1.964,
+\\ & 2.206, 2.292, 2.545, 2.62, 2.885, 2.947, 3.226, 3.273, 3.57, 3.595
+\end{split}\right\}
+$$
+
+## Matriz Hessiana
+#### A matriz Hessiana H é formada pelas seguintes derivadas:
+$$H =\begin{vmatrix}f_{xx}&f_{xy}\\f_{yx}&f_{yy}\end{vmatrix}$$
+#### A análise do determinante da matriz Hessiana: $$det\ H = f_{xx} \cdot f_{yy} - f_{xy} \cdot f_{yx}$$ nos permite analisar cada ponto crítico do vetor gradiente e determinar se o ponto é um ótimo local ou um ponto de sela:
+
+$$
+det\ H_{(x, y)} > 0 \Rightarrow f_{xx(x, y)}\left\{\begin{split}& > 0 \Rightarrow \text{Ponto de mínimo}\\
+&< 0 \Rightarrow \text{Ponto de máximo}\end{split}\right.
+$$
+$$det\ H(x, y) < 0 \Rightarrow \text{Ponto de sela}$$
+$$det\ H(x, y) = 0 \Rightarrow \text{Não se pode afirmar}$$
+
+### <center>Calculando as derivadas da matriz Hessiana:
+#### Partindo de: 
+$f_x = -3πsen(6πx) - 2x + 2$
+$f_y = -3πsen(6πy) - 2y - 2$
+#### Temos:
+$f_{xx} = -18π²cos(6πx)-2$
+$f_{yy} = -18π²cos(6πy)-2$
+$f_{xy} = 0$
+$f_{yx} = 0$
+
+#### Substituindo em $det\ H = f_{xx} \cdot f_{yy} - f_{xy} \cdot f_{yx}$
+
+#### $det H_{(x,y)} = [-18π²cos(6πx)-2] \cdot [-18π²cos(6πy)-2] - 0 \cdot 0$
+### $det H_{(x,y)} = [-18π²cos(6πx)-2] \cdot [-18π²cos(6πy)-2]$
+
+## Teste dos pontos críticos
+Para encontrar os possíveis ótimos locais, calculamos $det H_{(x,y)}$ para todos os pontos críticos (pontos $(x, y)$ que satisfazem a equação $\nabla f_{(x,y)} = 0$ ).
+
+A combinação de todos os valores de $x$ e $y$ encontrados anteriormente nos dá um total de 3249 pontos críticos. Devido a essa quantidade elevada, foi implementado um programa em Python para testar cada um dos pontos e encontrar os pontos ótimos da função.
+
+O código abaixo também se encontra disponível nesse [repositório do GitHub](https://github.com/Pedro-HMV/NumOpt/blob/master/main.py):
+
+<details>
+<summary>Clique para mostrar/esconder o código.</summary>
+
+```python
 import sympy as sym
 from sympy.abc import x as sym_x
 from sympy.abc import y as sym_y
@@ -24,9 +149,11 @@ class Problem:
     local_optima : list[tuple[float, float]]
         list of optimal points for the function, i.e., det H(x,y) > 0
     optima_by_type : dict[str, list[tuple[float, float]]]
-        dictionary with a list of local maxima (identified by the key 'maxima') and a list of local minima (identified by the key 'minima')
+        dictionary with a list of local maxima (identified by the key 'maxima') and a list of
+        local minima (identified by the key 'minima')
     global_optima : dict[str, dict[(str, tuple[float,float]), (str, float)]]
-        dictionary that holds the greatest local maximum point with its value and the smallest minimum point with its value
+        dictionary that holds the maximum point with the greatest value, the minimum point
+        with the smallest value and their respective values
 
     Methods
     -------
@@ -34,25 +161,31 @@ class Problem:
         Combines each value of x with each value of y to produce critical points as tuples
     fxx(x)
         Calculates the second order derivative of the objective function relative to x
-        This is sufficient for all second order derivatives in this problem, since its fxx and fyy are the same, and its fxy and fyx are both equal to zero
+        This is sufficient for all second order derivatives in this problem, since its fxx and
+        fyy are the same, and its fxy and fyx are both equal to zero
     det_H(x, y)
         Calculates the determinant of the Hessian matrix for point (x,y)
     get_hessian_list(points)
-        Iterates over the list of critical points, calling det_H(x, y) for each of them and storing both point and determinant in a dictionary,
+        Iterates over the list of critical points, calling det_H(x, y) for each of them and
+        storing both point and determinant in a dictionary,
         then appends the dictionary to a list
     get_local_optima(hessian_list)
-        Checks the sign of each value in the hessian_list and stores its point in a new list if the value is positive
+        Checks the sign of each value in the hessian_list and stores its point in a new list if
+        the value is positive
     get_optimum_type(local_optima)
-        Splits the list of local optimal points into a list of local minima and a list of local maxima
+        Splits the list of local optimal points into a list of local minima and a list of local
+        maxima
     test_objective(point)
         Calculates the value of the objective function for the given point
     get_global_optima(optima_by_type)
         Iterates over the list of local maxima and stores the one with the greatest value
-        then does the same for the local minima, but stores the one with the smallest value instead
+        then iterates over the list of local minima and stores the one with the smallest value
     '''
-
-    objective_function = sym.cos(3*sym.pi*(sym_x+sym_y))*sym.cos(3*sym.pi*(sym_x-sym_y))-sym_x**2-sym_y**2+2*(sym_x-sym_y)+2
-                         # cos[3π(x+y)]cos[3π(x−y)]−x²−y²+2(x−y)+2
+    
+	# cos[3π(x+y)]cos[3π(x−y)]−x²−y²+2(x−y)+2
+    objective_function = sym.cos(3*sym.pi*(sym_x+sym_y)) # cos[3π(x+y)]
+						 *sym.cos(3*sym.pi*(sym_x-sym_y)) # cos[3π(x−y)]
+						 -sym_x**2-sym_y**2+2*(sym_x-sym_y)+2 # −x²−y²+2(x−y)+2
 
     x_set = [
     -3.595, -3.57,-3.273,-3.226,-2.9473,-2.8847,-2.6202,-2.5452,-2.2923,-2.2064,
@@ -77,9 +210,11 @@ class Problem:
         Parameters
         ----------
         x_set : list[float]
-            List of values for the variable x which vanish the first order derivative of the objective function
+            List of values for the variable x which vanish the first order derivative of the
+            objective function
         y_set : list[float]
-            List of values for the variable y which vanish the first order derivative of the objective function
+            List of values for the variable y which vanish the first order derivative of the
+            objective function
 
         Returns
         -------
@@ -131,7 +266,8 @@ class Problem:
 
     def get_hessian_list(self, points):
         '''
-        Iterates over the list of critical points, calling det_H(x, y) for each of them and storing both point and determinant in a dictionary,
+        Iterates over the list of critical points, calling det_H(x, y) for each of them and
+        storing both point and determinant in a dictionary,
         then appends the dictionary to a list
 
         Parameters
@@ -154,7 +290,8 @@ class Problem:
 
     def get_local_optima(self, hessian_list):
         '''
-        Checks the sign of each value in the hessian_list and stores its point in a new list if the value is positive
+        Checks the sign of each value in the hessian_list and stores its point in a new list if
+        the value is positive
 
         Parameters
         ----------
@@ -178,7 +315,7 @@ class Problem:
 
     def get_optimum_type(self, local_optima):
         '''
-        Splits the list of local optimal points into a list of local minima and a list of local maxima
+        Separates the local optima into a list of local minima and a list of local maxima
 
         Parameters
         ----------
@@ -188,7 +325,8 @@ class Problem:
         Returns
         -------
         optima_by_type : dict[str,list[tuple[float,float]]]
-            Dictionary of maxima and minima, identified by keys 'maxima' and 'minima', respectively
+            Dictionary of maxima and minima, identified by keys 'maxima' and 'minima',
+            respectively
         '''
 
         maxima = []
@@ -225,12 +363,13 @@ class Problem:
     def get_global_optima(self, optima_by_type):
         '''
         Iterates over the list of local maxima and stores the one with the greatest value
-        then does the same for the local minima, but stores the one with the smallest value instead
+        then iterates over the list of local minima and stores the one with the smallest value
 
         Parameters
         ----------
         optima_by_type : dict[str,list[tuple[float,float]]]
-            Dictionary of maxima and minima, identified by keys 'maxima' and 'minima', respectively
+            Dictionary of maxima and minima, identified by keys 'maxima' and 'minima',
+            respectively
 
         Returns
         -------
@@ -280,10 +419,12 @@ class Problem:
     
 
 if __name__ == '__main__':
-    problem = Problem()
+    problem = Problem()    
     (max_point, max_value), = problem.global_optima['maximum'].items()
     (min_point, min_value), = problem.global_optima['minimum'].items()
     print(f'The greatest value for the objective function is {max_value}')
     print(f'Achieved at point {max_point}')
     print(f"The smallest value for the objective function is {min_value}")
     print(f"Achieved at point {min_point}")
+```
+</details>
