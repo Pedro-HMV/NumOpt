@@ -4,7 +4,7 @@ Resolução de um problema de otimização numérica de uma função com duas va
 Este repositório contém:
 - O [relatório](https://github.com/Pedro-HMV/NumOpt/blob/master/Teste%20otimiza%C3%A7%C3%A3o%20num%C3%A9rica.html) descrevendo o problema e todos os passos da solução matemática (favor baixar e abrir com um navegador, formato _html_);
 	- Caso tenha problemas ao visualizar o arquivo _html_, o relatório também está disponível [em _pdf_ ](https://github.com/Pedro-HMV/NumOpt/blob/master/Otimiza%C3%A7%C3%A3o%20Num%C3%A9rica.pdf), porém os links presentes no documento não funcionarão;
-- O [código Python](https://github.com/Pedro-HMV/NumOpt/blob/master/main.py) implementado para realizar os cálculos de uma etapa da equação (ver relatório para mais informações);
+- O [código Python](https://github.com/Pedro-HMV/NumOpt/blob/master/main.py) implementado para realizar os cálculos de uma etapa da resolução (ver relatório para mais informações);
 - A [lista de dependências](https://github.com/Pedro-HMV/NumOpt/blob/master/requirements.txt) que devem ser instaladas para executar o código (instruções abaixo).
 ## Executando o código
 <details>
