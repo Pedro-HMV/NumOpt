@@ -26,7 +26,7 @@ pip install -r requirements.txt
 python3 main.py
 ```
 	
-- **Linux:**		
+- **Linux/MacOS:**		
 ``` 
 python3 -m venv NumOpt
 
