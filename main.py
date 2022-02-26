@@ -57,7 +57,7 @@ class Problem:
     x_set = [
     -3.595, -3.57,-3.273,-3.226,-2.9473,-2.8847,-2.6202,-2.5452,-2.2923,-2.2064,
     -1.9639,-1.868,-1.635,-1.53,-1.306,-1.192,-0.977,-0.855,-0.648,-0.517,-0.318,
-    0.18,0.11,0.157,0.341,0.494,0.67,0.831,1,1.169,1.33,1.506,1.659,1.843,1.989,2.18,
+    0.18,0.011,0.157,0.341,0.494,0.67,0.831,1,1.169,1.33,1.506,1.659,1.843,1.989,2.18,
     2.318,2.517,2.648,2.855,2.977,3.192,3.306,3.53,3.635,3.868,3.964,4.206,4.292,4.545,
     4.62,4.885,4.947,5.226,5.273,5.57,5.595
     ]
@@ -276,14 +276,16 @@ class Problem:
         self.local_optima = self.get_local_optima(self.hessian_list)
         self.optima_by_type = self.get_optimum_type(self.local_optima)
         self.global_optima = self.get_global_optima(self.optima_by_type)
-        self.limit = self.get_limit()
     
 
 if __name__ == '__main__':
     problem = Problem()
-    (max_point, max_value), = problem.global_optima['maximum'].items()
-    (min_point, min_value), = problem.global_optima['minimum'].items()
-    print(f'The greatest value for the objective function is {max_value}')
-    print(f'Achieved at point {max_point}')
-    print(f"The smallest value for the objective function is {min_value}")
-    print(f"Achieved at point {min_point}")
+    max_point = problem.global_optima['maximum']['point']
+    max_value = problem.global_optima['maximum']['value']
+    min_point = problem.global_optima['minimum']['point']
+    min_value = problem.global_optima['minimum']['value']
+    print(f'Maior valor: {max_value}')
+    print(f'Ponto: {max_point}')
+    print('')
+    print(f'Menor valor: {min_value}')
+    print(f'Ponto: {min_point}')
